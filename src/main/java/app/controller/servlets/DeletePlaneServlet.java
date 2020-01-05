@@ -12,21 +12,21 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-public class AddPlaneServlet extends HttpServlet {
-
+public class DeletePlaneServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        Plane plane = PlaneUtils.createPlane(request);
+        Long ID = Long.parseLong(request.getParameter("id"));
         List<Plane> planes = Model.getPlanes();
-        planes.add(plane);
-        request.setAttribute("planes", planes);
+        Plane found = PlaneUtils.searchPlane(planes, ID);
+        planes.remove(found);
+        request.setAttribute("id",ID);
         doGet(request, response);
+
     }
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        RequestDispatcher requestDispatcher = request.getRequestDispatcher("view/add.jsp");
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("view/delete.jsp");
         requestDispatcher.forward(request, response);
     }
-
 }

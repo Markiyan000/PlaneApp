@@ -4,29 +4,41 @@
     <meta charset="UTF-8">
     <title>PlaneApp</title>
     <style>
-        div{
+        .heading{
             background-color: brown;
             font-family: Consolas;
             border-radius:35px;
             box-shadow: 0 0 10px 2px #1A3457;
         }
-        button {
-            background-color: white;
-            color: black;
-            border: 2px solid #4CAF50;
-            font-size: 20px;
+        .vertical-menu {
+            width: 200px;
         }
-        button:hover {
+        .vertical-menu a {
+            background-color: #eee;
+            color: black;
+            display: block;
+            padding: 12px;
+            text-decoration: none;
+        }
+        .vertical-menu a:hover {
+            background-color: #ccc;
+        }
+        .vertical-menu a.active {
             background-color: #4CAF50;
             color: white;
         }
     </style>
 </head>
 <body>
-    <div>
+    <div class = "heading">
         <h1 align="center">Plane App</h1>
     </div>
-    <button onclick="location.href='/add'">Add plane</button>
-    <button onclick="location.href='/list'">List of planes</button>
+    <div class="vertical-menu">
+        <a href="/" class="active">MENU</a>
+        <a href="/add">Add plane</a>
+        <a href="/list">List of planes</a>
+        <a href="/clear">Clear list</a>
+        <a href="/delete">Delete plane</a>
+    </div>
 </body>
 </html>

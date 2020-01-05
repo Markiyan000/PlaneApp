@@ -4,15 +4,15 @@ public class Route {
     private String from;
     private String to;
     private String timeStart;
-    private String startFinish;
+    private String timeFinish;
 
     public Route(){}
 
-    public Route(String from, String to, String timeStart, String startFinish) {
+    public Route(String from, String to, String timeStart, String timeFinish) {
         this.from = from;
         this.to = to;
         this.timeStart = timeStart;
-        this.startFinish = startFinish;
+        this.timeFinish = timeFinish;
     }
 
     public String getFrom() {
@@ -39,21 +39,11 @@ public class Route {
         this.timeStart = timeStart;
     }
 
-    public String getStartFinish() {
-        return startFinish;
+    public String getTimeFinish() {
+        return timeFinish;
     }
 
-    public void setStartFinish(String startFinish) {
-        this.startFinish = startFinish;
-    }
-
-    @Override
-    public String toString() {
-        return "Route{" +
-                "from='" + from + '\'' +
-                ", to='" + to + '\'' +
-                ", timeStart='" + timeStart + '\'' +
-                ", startFinish='" + startFinish + '\'' +
-                '}';
+    public void setTimeFinish(String timeFinish) {
+        this.timeFinish = timeFinish;
     }
 }

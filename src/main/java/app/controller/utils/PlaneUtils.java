@@ -2,18 +2,13 @@ package app.controller.utils;
 
 import app.model.entities.Plane;
 import app.model.entities.Route;
-
 import javax.servlet.http.HttpServletRequest;
-
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 public class PlaneUtils {
     public static Plane createPlane(HttpServletRequest request) {
-        final String[] DAYS = {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"};
+        String[] days = {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"};
         Long id = Long.parseLong(request.getParameter("id"));
         String company = request.getParameter("company");
         String[] daysOfExecution = {request.getParameter("mon"), request.getParameter("tue"),
@@ -21,7 +16,7 @@ public class PlaneUtils {
                 request.getParameter("fri"), request.getParameter("sat"), request.getParameter("sun")};
         List<String> realDayOfExecution = new ArrayList<>();
         for (int i = 0; i < daysOfExecution.length; i++) {
-            if (daysOfExecution[i].equals("+")) realDayOfExecution.add(DAYS[i]);
+            if (daysOfExecution[i].equals("+")) realDayOfExecution.add(days[i]);
         }
         String from = request.getParameter("from");
         String to = request.getParameter("to");
@@ -30,7 +25,11 @@ public class PlaneUtils {
         return new Plane(id, company, realDayOfExecution, new Route(from, to, timeStart, timeFinish));
     }
 
-    public static void addPlane(List<Plane> planes, Plane plane) {
-        planes.add(plane);
+    public static Plane searchPlane(List<Plane> planes, Long ID) {
+        for (Plane plane : planes) {
+            Long currentID = plane.getId();
+            if (ID == currentID) return plane;
+        }
+        return null;
     }
 }
