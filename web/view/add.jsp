@@ -21,7 +21,7 @@
 </head>
 <body>
     <div>
-        <h2>Adding plane</h2>
+        <h2 align = "center">Adding plane</h2>
     </div>
     <form method="post">
         <label>ID:

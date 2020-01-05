@@ -19,9 +19,8 @@ public class DeletePlaneServlet extends HttpServlet {
         List<Plane> planes = Model.getPlanes();
         Plane found = PlaneUtils.searchPlane(planes, ID);
         planes.remove(found);
-        request.setAttribute("id",ID);
+        request.setAttribute("id", ID);
         doGet(request, response);
-
     }
 
     @Override
