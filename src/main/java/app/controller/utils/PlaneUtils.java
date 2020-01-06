@@ -4,6 +4,8 @@ import app.model.entities.Plane;
 import app.model.entities.Route;
 import javax.servlet.http.HttpServletRequest;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class PlaneUtils {
@@ -31,5 +33,27 @@ public class PlaneUtils {
             if (ID == currentID) return plane;
         }
         return null;
+    }
+
+    public static List<Plane> sortByTime(List<Plane> planes) {
+        planes.sort((o1, o2) -> {
+            Route first = o1.getRoute();
+            Route second = o2.getRoute();
+            if (first.remainingHour() == second.remainingHour())
+                return first.remainingMinute() - second.remainingMinute();
+            else return first.remainingHour() - second.remainingHour();
+        });
+        return planes;
+    }
+
+    public static List<Plane> searchCity(List<Plane> planes,String city){
+        List<Plane> found = new ArrayList<>();
+        for(Plane current : planes){
+            String currentArrival = current.getRoute().getTo();
+            if(city.equals(currentArrival)){
+                found.add(current);
+            }
+        }
+        return found;
     }
 }

@@ -11,40 +11,101 @@
 <head>
     <title>PlaneApp</title>
     <style>
-        table {
-            font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
-            font-size: 16px;
-            width: 65%;
-            border-radius: 25px;
-            text-align: center;
+        body {
+            background-image: url("https://images.pexels.com/photos/912110/pexels-photo-912110.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260");
+            background-size: 1350px;
+        }
+        .heading {
+            background-color: cornflowerblue;
+            font-family: "Times New Roman";
+            color: white;
+            border-radius: 35px;
+            box-shadow: 0 0 10px 2px #1A3457;
+        }
+        .table_blur {
+            width: 70%;
+            background: #f5ffff;
             border-collapse: collapse;
-            background: #252F48;
-            margin:10px;
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 15px;
         }
-        table th {
-            color: #EDB749;
-            border-bottom: 1px solid #37B5A5;
-            padding: 12px 17px;
+        .table_blur th {
+            border-top: 1px solid #777777;
+            border-bottom: 1px solid #777777;
+            box-shadow: inset 0 1px 0 #999999, inset 0 -1px 0 #999999;
+            background: linear-gradient(#9595b6, cornflowerblue);
+            color: white;
+            padding: 10px 15px;
+            position: relative;
         }
-        table td {
-            color: #CAD4D6;
-            border-bottom: 1px solid #37B5A5;
-            border-right:1px solid #37B5A5;
-            padding: 7px 17px;
+        .table_blur th:after {
+            content: "";
+            display: block;
+            position: absolute;
+            left: 0;
+            top: 25%;
+            height: 25%;
+            width: 100%;
+            background: linear-gradient(rgba(255, 255, 255, 0), rgba(255,255,255,.08));
         }
-        table tr:last-child td {
-            border-bottom: none;
+        .table_blur tr:nth-child(odd) {
+            background: #ebf3f9;
         }
-        table td:last-child {
-            border-right: none;
+        .table_blur th:first-child {
+            border-left: 1px solid #777777;
+            border-bottom:  1px solid #777777;
+            box-shadow: inset 1px 1px 0 #999999, inset 0 -1px 0 #999999;
         }
-        table tr:hover td {
-            text-decoration: underline;
+        .table_blur th:last-child {
+            border-right: 1px solid #777777;
+            border-bottom:  1px solid #777777;
+            box-shadow: inset -1px 1px 0 #999999, inset 0 -1px 0 #999999;
+        }
+        .table_blur td {
+            border: 1px solid #e3eef7;
+            padding: 10px 15px;
+            position: relative;
+            transition: all 0.5s ease;
+        }
+        .table_blur tbody:hover td {
+            color: transparent;
+            text-shadow: 0 0 3px #a09f9d;
+        }
+        .table_blur tbody:hover tr:hover td {
+            color: #444444;
+            text-shadow: none;
+        }
+        button {
+            width: 500px;
+            font-family: "Times New Roman";
+            font-size: 18px;
+            text-align: center;
+            font-style: normal;
+            text-align: center;
+            display: block;
+            padding: 19px 39px 18px 39px;
+            color: #FFF;
+            background: red;
+            font-size: 25px;
+            text-align: center;
+            font-style: normal;
+            border: 1px solid black;
+            border-width: 1px 1px 3px;
+            border-radius: 10px;
+            margin: 0 auto 10px;
+        }
+        button:hover{
+            background-color: #cccccc;
         }
     </style>
 </head>
 <body>
-    <table class = "table">
+    <div class = "heading">
+        <h2 align="center">List of planes</h2>
+    </div>
+    <table class="table_blur">
         <tr>
             <th>ID</th>
             <th>Company</th>
@@ -69,6 +130,7 @@
     }
     %>
     </table>
+    <br/><br/><br/><br/>
     <div>
         <button onclick="location.href='/'">Back to main</button>
     </div>

@@ -1,5 +1,6 @@
 package app.controller.servlets;
 
+import app.controller.utils.PlaneUtils;
 import app.model.Model;
 import app.model.entities.Plane;
 
@@ -11,11 +12,18 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-public class ListServlet extends HttpServlet {
+public class SearchCityServlet  extends HttpServlet {
+
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) {
+
+    }
+
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         List<Plane> planes = Model.getPlanes();
-        request.setAttribute("planes", planes);
+        List<Plane> found = PlaneUtils.searchCity(planes, "Berlin");
+        request.setAttribute("planes", found);
         RequestDispatcher requestDispatcher = request.getRequestDispatcher("view/list.jsp");
         requestDispatcher.forward(request, response);
     }

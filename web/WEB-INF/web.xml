@@ -43,4 +43,24 @@
         <servlet-name>delete</servlet-name>
         <url-pattern>/delete</url-pattern>
     </servlet-mapping>
+
+    <!-- servlet for sorting planes by time -->
+    <servlet>
+        <servlet-name>sortByTime</servlet-name>
+        <servlet-class>app.controller.servlets.SortByTimeServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>sortByTime</servlet-name>
+        <url-pattern>/sortByTime</url-pattern>
+    </servlet-mapping>
+
+    <!-- servlet for search city -->
+    <servlet>
+        <servlet-name>searchCity</servlet-name>
+        <servlet-class>app.controller.servlets.SearchCityServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>searchCity</servlet-name>
+        <url-pattern>/searchCity</url-pattern>
+    </servlet-mapping>
 </web-app>

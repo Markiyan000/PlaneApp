@@ -10,10 +10,6 @@
 <head>
     <title>Deleting plane</title>
     <style>
-        body {
-            background-image: url("https://images.pexels.com/photos/912110/pexels-photo-912110.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260");
-            background-size: 1350px;
-        }
         .heading {
             background-color: cornflowerblue;
             font-family: "Times New Roman";
@@ -88,15 +84,15 @@
     </style>
 </head>
 <body>
-    <div>
-        <h2 class = "heading" align="center">Deleting plane</h2>
-    </div>
-    <form method="post">
-        <input type="text" name="id" placeholder="Enter ID...">
-        <input type="submit" value="Submit"/>
-    </form>
-    <div>
-        <button onclick="location.href='/'">Back to main</button>
-    </div>
+<div>
+    <h2 class = "heading" align="center">Deleting plane</h2>
+</div>
+<form method="post">
+    <input type="text" name="city" placeholder="Enter city...">
+    <input type="submit" value="Submit"/>
+</form>
+<div>
+    <button onclick="location.href='/'">Back to main</button>
+</div>
 </body>
 </html>
