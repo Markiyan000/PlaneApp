@@ -2,9 +2,10 @@ package app.model.entities;
 
 import app.controller.utils.StringUtils;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class Route {
+public class Route implements Serializable {
     private String from;
     private String to;
     private String timeStart;

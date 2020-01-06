@@ -15,13 +15,21 @@
             border-radius: 35px;
             box-shadow: 0 0 10px 2px #1A3457;
         }
-        .vertical-menu {
-            margin: 0 auto;
-            padding:270px;
+        .airport-menu{
+            margin-left: 50px;
+            left: 0;
+        }
+        .user-menu{
+            margin-right: 20px;
+            right: 0;
+        }
+        .airport-menu, .user-menu{
+            position: fixed;
+            bottom: 20%;
             text-align: center;
             width: 300px;
         }
-        .vertical-menu a {
+        .airport-menu a, .user-menu a {
             border-radius: 15px;
             background-color: white;
             color: black;
@@ -29,27 +37,33 @@
             padding: 12px;
             text-decoration: none;
         }
-        .vertical-menu a:hover {
+        .airport-menu a:hover, .user-menu a:hover {
             background-color: #cccccc;
         }
-        .vertical-menu a.active {
+        .airport-menu a.active, .user-menu a.active {
             background-color: cornflowerblue;
             color: white;
         }
     </style>
 </head>
 <body>
-    <div class = "heading">
-        <h1 align="center">Plane App</h1>
-    </div>
-    <div class="vertical-menu">
-        <a href="/" class="active">MENU</a>
-        <a href="/add">Add plane</a>
-        <a href="/list">List of planes</a>
-        <a href="/clear">Clear list</a>
-        <a href="/delete">Delete plane</a>
-        <a href="/sortByTime">Sorting by time</a>
-        <a href="/searchCity">Search city</a>
-    </div>
+<div class = "heading">
+    <h1 align="center">Plane App</h1>
+</div>
+<div class="airport-menu">
+    <a href="/" class="active">AIRPORT MENU</a>
+    <a href="/add">Add plane</a>
+    <a href="/delete">Delete plane</a>
+    <a href="/clear">Clear list</a>
+    <a href="/read">Read from file</a>
+    <a href="/list">List of planes</a>
+</div>
+<div class="user-menu">
+    <a href="/" class="active">USER MENU</a>
+    <a href="/list">List of planes</a>
+    <a href="/sortByTime">Sorting flights by time</a>
+    <a href="/searchCity">Search flights by city</a>
+    <a href="/searchDay">Search flights by day</a>
+</div>
 </body>
 </html>

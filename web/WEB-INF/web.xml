@@ -4,7 +4,6 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
 
-    <!-- servlet for adding plane -->
     <servlet>
         <servlet-name>add</servlet-name>
         <servlet-class>app.controller.servlets.AddPlaneServlet</servlet-class>
@@ -14,7 +13,6 @@
         <url-pattern>/add</url-pattern>
     </servlet-mapping>
 
-    <!-- servlet for showing all planes -->
     <servlet>
         <servlet-name>list</servlet-name>
         <servlet-class>app.controller.servlets.ListServlet</servlet-class>
@@ -24,7 +22,6 @@
         <url-pattern>/list</url-pattern>
     </servlet-mapping>
 
-    <!-- servlet for clearing all planes -->
     <servlet>
         <servlet-name>clear</servlet-name>
         <servlet-class>app.controller.servlets.ClearListServlet</servlet-class>
@@ -34,7 +31,6 @@
         <url-pattern>/clear</url-pattern>
     </servlet-mapping>
 
-    <!-- servlet for deleting plane -->
     <servlet>
         <servlet-name>delete</servlet-name>
         <servlet-class>app.controller.servlets.DeletePlaneServlet</servlet-class>
@@ -44,7 +40,6 @@
         <url-pattern>/delete</url-pattern>
     </servlet-mapping>
 
-    <!-- servlet for sorting planes by time -->
     <servlet>
         <servlet-name>sortByTime</servlet-name>
         <servlet-class>app.controller.servlets.SortByTimeServlet</servlet-class>
@@ -54,7 +49,6 @@
         <url-pattern>/sortByTime</url-pattern>
     </servlet-mapping>
 
-    <!-- servlet for search city -->
     <servlet>
         <servlet-name>searchCity</servlet-name>
         <servlet-class>app.controller.servlets.SearchCityServlet</servlet-class>
@@ -63,4 +57,24 @@
         <servlet-name>searchCity</servlet-name>
         <url-pattern>/searchCity</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>searchDay</servlet-name>
+        <servlet-class>app.controller.servlets.SearchFlightByDayServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>searchDay</servlet-name>
+        <url-pattern>/searchDay</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>read</servlet-name>
+        <servlet-class>app.controller.servlets.ReadFileServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>read</servlet-name>
+        <url-pattern>/read</url-pattern>
+    </servlet-mapping>
+
+
 </web-app>

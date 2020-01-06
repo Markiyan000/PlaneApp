@@ -85,10 +85,10 @@
 </head>
 <body>
 <div>
-    <h2 class = "heading" align="center">Deleting plane</h2>
+    <h2 class = "heading" align="center">Search flight by day</h2>
 </div>
 <form method="post">
-    <input type="text" name="city" placeholder="Enter city...">
+    <input type="text" name="day" placeholder="Enter day...">
     <input type="submit" value="Submit"/>
 </form>
 <div>

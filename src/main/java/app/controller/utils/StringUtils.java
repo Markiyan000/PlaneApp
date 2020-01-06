@@ -1,5 +1,7 @@
 package app.controller.utils;
 
+import java.time.DayOfWeek;
+
 public class StringUtils {
     public static int[] splitTime(String time) {
         int[] res = new int[2];

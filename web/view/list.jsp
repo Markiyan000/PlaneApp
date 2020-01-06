@@ -77,6 +77,9 @@
             color: #444444;
             text-shadow: none;
         }
+        .td days{
+            width: 30%;
+        }
         button {
             width: 500px;
             font-family: "Times New Roman";
@@ -125,7 +128,7 @@
         out.println("<td>" + plane.getRoute().getTo() + "</td>");
         out.println("<td>" + plane.getRoute().getTimeStart() + "</td>");
         out.println("<td>" + plane.getRoute().getTimeFinish() + "</td>");
-        out.println("<td>" + plane.getDaysOfExecution() + "</td>");
+        out.println("<td class=days>" + plane.getDaysOfExecution() + "</td>");
         out.println("</tr>");
     }
     %>

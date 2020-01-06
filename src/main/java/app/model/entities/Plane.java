@@ -1,18 +1,20 @@
 package app.model.entities;
 
+import java.io.Serializable;
+import java.time.DayOfWeek;
 import java.util.List;
 
-public class Plane {
+public class Plane implements Serializable {
     private long id;
     private String company;
-    private List<String> daysOfExecution;
+    private List<DayOfWeek> daysOfExecution;
     private Route route;
 
-    public Plane(){
+    public Plane() {
 
     }
 
-    public Plane(long id, String company, List<String> daysOfExecution, Route route) {
+    public Plane(long id, String company, List<DayOfWeek> daysOfExecution, Route route) {
         this.id = id;
         this.company = company;
         this.daysOfExecution = daysOfExecution;
@@ -35,11 +37,11 @@ public class Plane {
         this.company = company;
     }
 
-    public List<String> getDaysOfExecution() {
+    public List<DayOfWeek> getDaysOfExecution() {
         return daysOfExecution;
     }
 
-    public void setDaysOfExecution(List<String> daysOfExecution) {
+    public void setDaysOfExecution(List<DayOfWeek> daysOfExecution) {
         this.daysOfExecution = daysOfExecution;
     }
 
@@ -49,15 +51,5 @@ public class Plane {
 
     public void setRoute(Route route) {
         this.route = route;
-    }
-
-    @Override
-    public String toString() {
-        return "Plane{" +
-                "id=" + id +
-                ", company='" + company + '\'' +
-                ", daysOfExecution=" + daysOfExecution +
-                ", route=" + route +
-                '}';
     }
 }
