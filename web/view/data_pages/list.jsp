@@ -16,7 +16,7 @@
     <div class = "heading">
         <h2 align="center">List of planes</h2>
     </div>
-    <table class="table_blur">
+    <table class="table">
         <tr>
             <th>ID</th>
             <th>Company</th>
