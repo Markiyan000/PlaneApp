@@ -1,4 +1,4 @@
-package app.controller.servlets;
+package app.controller.servlets.sorting_servlets;
 
 import app.controller.utils.PlaneUtils;
 import app.model.Model;
@@ -12,21 +12,13 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-public class AddPlaneServlet extends HttpServlet {
-
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        Plane plane = PlaneUtils.createPlane(request);
-        List<Plane> planes = Model.getPlanes();
-        planes.add(plane);
-        request.setAttribute("planes", planes);
-        doGet(request, response);
-    }
-
+public class SortByTimeServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        RequestDispatcher requestDispatcher = request.getRequestDispatcher("view/add.jsp");
+        List<Plane> planes = Model.getPlanes();
+        List<Plane> sorted = PlaneUtils.sortByTime(planes);
+        request.setAttribute("planes", sorted);
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("view/data_pages/list.jsp");
         requestDispatcher.forward(request, response);
     }
-
 }

@@ -1,10 +1,9 @@
-package app.controller.servlets;
+package app.controller.servlets.search_servlets;
 
 import app.controller.utils.PlaneUtils;
 import app.model.Model;
 import app.model.entities.Plane;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -12,20 +11,18 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-public class DeletePlaneServlet extends HttpServlet {
+public class SearchFlightDepartureServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        Long ID = Long.parseLong(request.getParameter("id"));
+        String departure = request.getParameter("city");
         List<Plane> planes = Model.getPlanes();
-        Plane found = PlaneUtils.searchPlane(planes, ID);
-        planes.remove(found);
-        request.setAttribute("id", ID);
-        doGet(request, response);
+        List<Plane> found = PlaneUtils.searchDeparture(planes, departure);
+        request.setAttribute("planes", found);
+        request.getRequestDispatcher("view/data_pages/list.jsp").forward(request, response);
     }
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        RequestDispatcher requestDispatcher = request.getRequestDispatcher("view/delete.jsp");
-        requestDispatcher.forward(request, response);
+        request.getRequestDispatcher("view/search_pages/searchCity.jsp").forward(request, response);
     }
 }

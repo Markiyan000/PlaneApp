@@ -1,4 +1,4 @@
-package app.controller.servlets;
+package app.controller.servlets.data_servlets;
 
 import app.controller.utils.PlaneUtils;
 import app.model.Model;

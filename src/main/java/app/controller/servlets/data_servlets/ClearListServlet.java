@@ -1,4 +1,4 @@
-package app.controller.servlets;
+package app.controller.servlets.data_servlets;
 
 import app.model.Model;
 import javax.servlet.ServletException;

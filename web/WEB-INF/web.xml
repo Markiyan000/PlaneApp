@@ -6,7 +6,7 @@
 
     <servlet>
         <servlet-name>add</servlet-name>
-        <servlet-class>app.controller.servlets.AddPlaneServlet</servlet-class>
+        <servlet-class>app.controller.servlets.data_servlets.AddPlaneServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>add</servlet-name>
@@ -15,7 +15,7 @@
 
     <servlet>
         <servlet-name>list</servlet-name>
-        <servlet-class>app.controller.servlets.ListServlet</servlet-class>
+        <servlet-class>app.controller.servlets.data_servlets.ListPlanesServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>list</servlet-name>
@@ -24,7 +24,7 @@
 
     <servlet>
         <servlet-name>clear</servlet-name>
-        <servlet-class>app.controller.servlets.ClearListServlet</servlet-class>
+        <servlet-class>app.controller.servlets.data_servlets.ClearListServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>clear</servlet-name>
@@ -33,7 +33,7 @@
 
     <servlet>
         <servlet-name>delete</servlet-name>
-        <servlet-class>app.controller.servlets.DeletePlaneServlet</servlet-class>
+        <servlet-class>app.controller.servlets.data_servlets.DeletePlaneServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>delete</servlet-name>
@@ -41,26 +41,53 @@
     </servlet-mapping>
 
     <servlet>
-        <servlet-name>sortByTime</servlet-name>
-        <servlet-class>app.controller.servlets.SortByTimeServlet</servlet-class>
+        <servlet-name>read</servlet-name>
+        <servlet-class>app.controller.servlets.data_servlets.ReadFileServlet</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>sortByTime</servlet-name>
-        <url-pattern>/sortByTime</url-pattern>
+        <servlet-name>read</servlet-name>
+        <url-pattern>/read</url-pattern>
     </servlet-mapping>
 
     <servlet>
-        <servlet-name>searchCity</servlet-name>
-        <servlet-class>app.controller.servlets.SearchCityServlet</servlet-class>
+        <servlet-name>sort</servlet-name>
+        <servlet-class>app.controller.servlets.sorting_servlets.SortByTimeServlet</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>searchCity</servlet-name>
-        <url-pattern>/searchCity</url-pattern>
+        <servlet-name>sort</servlet-name>
+        <url-pattern>/sort</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>search</servlet-name>
+        <servlet-class>app.controller.servlets.search_servlets.SearchFlightServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>search</servlet-name>
+        <url-pattern>/search</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>searchToday</servlet-name>
+        <servlet-class>app.controller.servlets.search_servlets.SearchFlightTodayServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>searchToday</servlet-name>
+        <url-pattern>/searchToday</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>searchTomorrow</servlet-name>
+        <servlet-class>app.controller.servlets.search_servlets.SearchFlightTomorrowServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>searchTomorrow</servlet-name>
+        <url-pattern>/searchTomorrow</url-pattern>
     </servlet-mapping>
 
     <servlet>
         <servlet-name>searchDay</servlet-name>
-        <servlet-class>app.controller.servlets.SearchFlightByDayServlet</servlet-class>
+        <servlet-class>app.controller.servlets.search_servlets.SearchFlightDayServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>searchDay</servlet-name>
@@ -68,13 +95,20 @@
     </servlet-mapping>
 
     <servlet>
-        <servlet-name>read</servlet-name>
-        <servlet-class>app.controller.servlets.ReadFileServlet</servlet-class>
+        <servlet-name>searchDeparture</servlet-name>
+        <servlet-class>app.controller.servlets.search_servlets.SearchFlightDepartureServlet</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>read</servlet-name>
-        <url-pattern>/read</url-pattern>
+        <servlet-name>searchDeparture</servlet-name>
+        <url-pattern>/searchDeparture</url-pattern>
     </servlet-mapping>
 
-
+    <servlet>
+        <servlet-name>searchArrival</servlet-name>
+        <servlet-class>app.controller.servlets.search_servlets.SearchFlightArrivalServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>searchArrival</servlet-name>
+        <url-pattern>/searchArrival</url-pattern>
+    </servlet-mapping>
 </web-app>

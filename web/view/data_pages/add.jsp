@@ -153,7 +153,7 @@
 <input type="submit" value="Submit"/>
 </form>
 <div>
-    <button onclick="location.href='/'">Back to main</button>
+    <button onclick="location.href='../..'">Back to main</button>
 </div>
 </body>
 </html>

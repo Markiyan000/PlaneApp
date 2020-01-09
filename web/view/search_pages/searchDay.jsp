@@ -8,7 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Deleting plane</title>
+    <title>Search by day</title>
     <style>
         body {
             background-image: url("https://images.pexels.com/photos/912110/pexels-photo-912110.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260");
@@ -88,15 +88,15 @@
     </style>
 </head>
 <body>
-    <div>
-        <h2 class = "heading" align="center">Deleting plane</h2>
-    </div>
-    <form method="post">
-        <input type="text" name="id" placeholder="Enter ID...">
-        <input type="submit" value="Submit"/>
-    </form>
-    <div>
-        <button onclick="location.href='/'">Back to main</button>
-    </div>
+<div>
+    <h2 class = "heading" align="center">Search by day</h2>
+</div>
+<form method="post">
+    <input type="text" name="day" placeholder="Enter day...">
+    <input type="submit" value="Submit"/>
+</form>
+<div>
+    <button onclick="location.href='view/search_pages/search.jsp'">Back</button>
+</div>
 </body>
 </html>

@@ -49,16 +49,20 @@ public class PlaneUtils {
         return sorted;
     }
 
-    public static List<Plane> searchCity(List<Plane> planes, String city) {
+    public static List<Plane> searchDeparture(List<Plane> planes, String city) {
+        return planes.stream().filter(p -> p.getRoute().getFrom().equals(city)).collect(Collectors.toList());
+    }
+
+    public static List<Plane> searchArrival(List<Plane> planes, String city) {
         return planes.stream().filter(p -> p.getRoute().getTo().equals(city)).collect(Collectors.toList());
     }
 
-    public static List<Plane> searchFlightByDay(List<Plane> planes, String searchDay) {
+    public static List<Plane> searchFlightByDay(List<Plane> planes, String day) {
         List<Plane> found = new ArrayList<>();
         for (Plane plane : planes) {
             List<DayOfWeek> dayOfWeeks = plane.getDaysOfExecution();
             for (DayOfWeek dayOfWeek : dayOfWeeks) {
-                if (dayOfWeek.name().equalsIgnoreCase(searchDay)) {
+                if (dayOfWeek.name().equalsIgnoreCase(day)) {
                     found.add(plane);
                     break;
                 }
