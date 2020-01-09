@@ -5,7 +5,8 @@ import java.time.DayOfWeek;
 import java.util.List;
 
 public class Plane implements Serializable {
-    private long id;
+    private static final long serialVersionUID = 1L;
+    private Long id;
     private String company;
     private List<DayOfWeek> daysOfExecution;
     private Route route;
@@ -14,18 +15,18 @@ public class Plane implements Serializable {
 
     }
 
-    public Plane(long id, String company, List<DayOfWeek> daysOfExecution, Route route) {
+    public Plane(Long id, String company, List<DayOfWeek> daysOfExecution, Route route) {
         this.id = id;
         this.company = company;
         this.daysOfExecution = daysOfExecution;
         this.route = route;
     }
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

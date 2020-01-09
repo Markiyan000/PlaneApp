@@ -1,14 +1,12 @@
 package app.controller.utils;
 
-import java.time.DayOfWeek;
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class StringUtils {
-    public static int[] splitTime(String time) {
-        int[] res = new int[2];
+    public static List<Integer> splitTime(String time) {
         String[] separated = time.split(":", 2);
-        for (int i = 0; i < 2; i++) {
-            res[i] = Integer.parseInt(separated[i]);
-        }
-        return res;
+        return Arrays.stream(separated).map(s -> Integer.parseInt(s)).collect(Collectors.toList());
     }
 }

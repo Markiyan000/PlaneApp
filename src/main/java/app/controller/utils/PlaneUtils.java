@@ -1,5 +1,6 @@
 package app.controller.utils;
 
+import app.model.ModelDays;
 import app.model.entities.Plane;
 import app.model.entities.Route;
 import javax.servlet.http.HttpServletRequest;
@@ -11,8 +12,7 @@ import java.util.stream.Collectors;
 
 public class PlaneUtils {
     public static Plane createPlane(HttpServletRequest request) {
-        DayOfWeek[] days = {DayOfWeek.MONDAY, DayOfWeek.TUESDAY, DayOfWeek.WEDNESDAY, DayOfWeek.THURSDAY,
-                DayOfWeek.FRIDAY, DayOfWeek.SATURDAY, DayOfWeek.SUNDAY};
+        List<DayOfWeek> dayOfWeeks = ModelDays.getDays();
         Long id = Long.parseLong(request.getParameter("id"));
         String company = request.getParameter("company");
         String[] daysOfExecution = {request.getParameter("mon"), request.getParameter("tue"),
@@ -20,7 +20,7 @@ public class PlaneUtils {
                 request.getParameter("fri"), request.getParameter("sat"), request.getParameter("sun")};
         List<DayOfWeek> realDayOfExecution = new ArrayList<>();
         for (int i = 0; i < daysOfExecution.length; i++) {
-            if (daysOfExecution[i].equals("+")) realDayOfExecution.add(days[i]);
+            if (daysOfExecution[i].equals("+")) realDayOfExecution.add(dayOfWeeks.get(i));
         }
         String from = request.getParameter("from");
         String to = request.getParameter("to");
@@ -30,11 +30,7 @@ public class PlaneUtils {
     }
 
     public static Plane searchPlane(List<Plane> planes, Long ID) {
-        for (Plane plane : planes) {
-            Long currentID = plane.getId();
-            if (ID == currentID) return plane;
-        }
-        return null;
+        return planes.stream().filter(p -> p.getId().equals(ID)).findFirst().get();
     }
 
     public static List<Plane> sortByTime(List<Plane> planes) {

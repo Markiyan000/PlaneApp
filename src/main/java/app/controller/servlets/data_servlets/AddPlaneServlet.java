@@ -1,10 +1,8 @@
 package app.controller.servlets.data_servlets;
 
 import app.controller.utils.PlaneUtils;
-import app.model.Model;
+import app.model.ModelPlanes;
 import app.model.entities.Plane;
-
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -17,7 +15,7 @@ public class AddPlaneServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         Plane plane = PlaneUtils.createPlane(request);
-        List<Plane> planes = Model.getPlanes();
+        List<Plane> planes = ModelPlanes.getPlanes();
         planes.add(plane);
         request.setAttribute("planes", planes);
         doGet(request, response);
@@ -25,8 +23,6 @@ public class AddPlaneServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        RequestDispatcher requestDispatcher = request.getRequestDispatcher("view/data_pages/add.jsp");
-        requestDispatcher.forward(request, response);
+        request.getRequestDispatcher("view/data_pages/add.jsp").forward(request, response);
     }
-
 }

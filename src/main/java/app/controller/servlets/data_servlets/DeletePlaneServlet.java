@@ -1,10 +1,8 @@
 package app.controller.servlets.data_servlets;
 
 import app.controller.utils.PlaneUtils;
-import app.model.Model;
+import app.model.ModelPlanes;
 import app.model.entities.Plane;
-
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -16,7 +14,7 @@ public class DeletePlaneServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         Long ID = Long.parseLong(request.getParameter("id"));
-        List<Plane> planes = Model.getPlanes();
+        List<Plane> planes = ModelPlanes.getPlanes();
         Plane found = PlaneUtils.searchPlane(planes, ID);
         planes.remove(found);
         request.setAttribute("id", ID);
@@ -25,7 +23,6 @@ public class DeletePlaneServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        RequestDispatcher requestDispatcher = request.getRequestDispatcher("view/data_pages/delete.jsp");
-        requestDispatcher.forward(request, response);
+        request.getRequestDispatcher("view/data_pages/delete.jsp").forward(request, response);
     }
 }

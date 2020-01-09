@@ -1,7 +1,7 @@
 package app.controller.servlets.search_servlets;
 
 import app.controller.utils.PlaneUtils;
-import app.model.Model;
+import app.model.ModelPlanes;
 import app.model.entities.Plane;
 
 import javax.servlet.ServletException;
@@ -15,7 +15,7 @@ public class SearchFlightDepartureServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String departure = request.getParameter("city");
-        List<Plane> planes = Model.getPlanes();
+        List<Plane> planes = ModelPlanes.getPlanes();
         List<Plane> found = PlaneUtils.searchDeparture(planes, departure);
         request.setAttribute("planes", found);
         request.getRequestDispatcher("view/data_pages/list.jsp").forward(request, response);

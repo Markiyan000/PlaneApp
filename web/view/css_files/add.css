@@ -1,0 +1,59 @@
+@import "button.css";
+@import "heading_and_body.css";
+
+.first, .second{
+    border-color: cornflowerblue;
+    max-width: 500px;
+    padding: 10px 20px;
+    background: cornflowerblue;
+    margin: 10px auto;
+    padding: 20px;
+    background: #f4f7f8;
+    border-radius: 15px;
+    font-family: Georgia, "Times New Roman", Times, serif;
+}
+.first legend, .second legend {
+    font-size: 1.4em;
+    margin-bottom: 10px;
+}
+.first input, .second input[type="text"]
+{
+    font-family: Georgia, "Times New Roman", Times, serif;
+    border: none;
+    border-radius: 4px;
+    font-size: 15px;
+    outline: 0;
+    padding: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    background: #e8eeef;
+    color:#8a97a0;
+    -webkit-box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+    box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+    margin: 0 0 30px;
+}
+.first input,.second input[type="text"]:focus
+{
+    background: #d2d9dd;
+}
+.first{
+    float: left;
+}
+.second{
+    float: right;
+}
+.first .number,.second .number {
+    background: cornflowerblue;
+    color: #cccccc;
+    height: 30px;
+    width: 30px;
+    display: inline-block;
+    font-size: 0.8em;
+    margin-right: 4px;
+    line-height: 30px;
+    text-align: center;
+    text-shadow: 0 1px 0 rgba(255,255,255,0.2);
+    border-radius: 15px 15px 15px 0px;
+}

@@ -1,7 +1,9 @@
 package app.controller.utils;
 
+import app.model.ModelDays;
 import java.time.DayOfWeek;
 import java.time.LocalDate;
+import java.util.List;
 
 public class DateUtils {
     public static String getToday() {
@@ -10,15 +12,9 @@ public class DateUtils {
 
     public static String getTomorrow() {
         String today = getToday();
-        int indexToday = 0;
-        DayOfWeek[] dayOfWeeks = {DayOfWeek.MONDAY, DayOfWeek.TUESDAY, DayOfWeek.WEDNESDAY,
-                DayOfWeek.THURSDAY, DayOfWeek.FRIDAY, DayOfWeek.SATURDAY, DayOfWeek.SUNDAY};
-        for (int i = 0; i < dayOfWeeks.length; i++) {
-            if (today.equals(dayOfWeeks[i].name())) {
-                indexToday = i;
-                break;
-            }
-        }
-        return dayOfWeeks[indexToday + 1].name();
+        List<DayOfWeek> dayOfWeeks = ModelDays.getDays();
+        DayOfWeek temporaryToday = dayOfWeeks.stream().filter(d -> d.name().equals(today)).findFirst().get();
+        int indexToday = dayOfWeeks.indexOf(temporaryToday);
+        return dayOfWeeks.get(indexToday + 1).name();
     }
 }

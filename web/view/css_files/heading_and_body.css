@@ -1,0 +1,11 @@
+body {
+    background-image: url("https://images.pexels.com/photos/912110/pexels-photo-912110.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260");
+    background-size: 1350px;
+}
+.heading {
+    background-color: cornflowerblue;
+    font-family: "Times New Roman";
+    color: white;
+    border-radius: 35px;
+    box-shadow: 0 0 10px 2px #1A3457;
+}

@@ -4,14 +4,17 @@ import app.controller.utils.StringUtils;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 
 public class Route implements Serializable {
+    private static final long serialVersionUID = 1L;
     private String from;
     private String to;
     private String timeStart;
     private String timeFinish;
 
-    public Route(){}
+    public Route() {
+    }
 
     public Route(String from, String to, String timeStart, String timeFinish) {
         this.from = from;
@@ -52,25 +55,25 @@ public class Route implements Serializable {
         this.timeFinish = timeFinish;
     }
 
-    public int getHourStart() {
-        int[] time = StringUtils.splitTime(timeStart);
-        return time[0];
+    public Integer getHourStart() {
+        List<Integer> time = StringUtils.splitTime(timeStart);
+        return time.get(0);
     }
 
-    public int getMinuteStart() {
-        int[] time = StringUtils.splitTime(timeStart);
-        return time[1];
+    public Integer getMinuteStart() {
+        List<Integer> time = StringUtils.splitTime(timeStart);
+        return time.get(1);
     }
 
-    public static int getCurHour() {
+    public static Integer getCurHour() {
         return new Date().getHours();
     }
 
-    public static int getCurMinute() {
+    public static Integer getCurMinute() {
         return new Date().getMinutes();
     }
 
-    public int remainingHour() {
+    public Integer remainingHour() {
         int hourStart = getHourStart();
         int curHour = getCurHour();
         if (hourStart >= curHour) {
@@ -78,7 +81,7 @@ public class Route implements Serializable {
         } else return (24 + hourStart) - curHour;
     }
 
-    public int remainingMinute() {
+    public Integer remainingMinute() {
         return getMinuteStart() - getCurMinute();
     }
 }
