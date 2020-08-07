@@ -1,16 +1,23 @@
-PlaneApp
+# PlaneApp
 
-Simple web project built on Java Servlets & JSP.
+This is a simple web project for supporting the work of airport.
 
-The program has many useful features such as:
-1) from the airport: 
-      - add new plane
-      - delete plane
-      - delete all planes
-      - read data from file.
-2) from the user:
-      - see the list of planes
-      - search flights by: 
-           -days (today, tomorrow, other day)
-           -city (departure, arrival).
-      - sorting planes by time of departure
+User:
+- see list of planes
+- search flights by:
+     - days (today, tomorrow or other day)
+     - city (departure, arrival)
+     - sorting planes by time of departure
+     
+Admin:
+- add new planes
+- delete plane
+- delete all planes
+- read data from file
+
+Server Side: 
+- Java 8, Servlet API, Java Server Pages(JSP), JSTL
+Client Side:
+- HTML, CSS
+Data Storage:
+- File System (using Serialization API)
