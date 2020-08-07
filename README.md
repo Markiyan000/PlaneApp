@@ -17,7 +17,9 @@ Admin:
 
 Server Side: 
 - Java 8, Servlet API, Java Server Pages(JSP), JSTL.
+
 Client Side:
 - HTML, CSS.
+
 Data Storage:
 - File System (using Serialization API)
