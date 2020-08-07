@@ -16,8 +16,8 @@ Admin:
 - read data from file
 
 Server Side: 
-- Java 8, Servlet API, Java Server Pages(JSP), JSTL
+- Java 8, Servlet API, Java Server Pages(JSP), JSTL.
 Client Side:
-- HTML, CSS
+- HTML, CSS.
 Data Storage:
 - File System (using Serialization API)
